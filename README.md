@@ -1,6 +1,6 @@
-# 라즈베리파이 4B
+# 라즈베리파이 4B
 
-# 설치
+## 설치
 * [Raspberry Pi Imager](https://www.raspberrypi.com/software)
 ```sh
 운영체제: Raspberry Pi OS (32-bit)
