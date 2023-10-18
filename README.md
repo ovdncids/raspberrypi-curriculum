@@ -3,7 +3,7 @@
 ## 설치
 * [Raspberry Pi Imager](https://www.raspberrypi.com/software)
 ```sh
-운영체제: Raspberry Pi OS (32-bit)
+운영체제: Raspberry Pi OS (64-bit)
 저장소: SD카드 선택
 
 # 설정
@@ -60,6 +60,12 @@ Preferences > Raspberry Pi Configuration > Localisation > Set Locale... > ko (Ko
 ```sh
 # 실행중인 서비스 보기
 sudo service --status-all
+# 서비스 상태
+systemctl status fio.service
+# 서비스 시작
+systemctl start fio.service
+# 서비스 종료
+systemctl stop fio.service
 ```
 
 ## Anydesk
