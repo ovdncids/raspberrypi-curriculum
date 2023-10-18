@@ -3,7 +3,7 @@
 ## 설치
 * [Raspberry Pi Imager](https://www.raspberrypi.com/software)
 ```sh
-운영체제: Raspberry Pi OS (64-bit)
+운영체제: Raspberry Pi OS (LEGACY)
 저장소: SD카드 선택
 
 # 설정
