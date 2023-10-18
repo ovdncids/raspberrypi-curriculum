@@ -27,6 +27,9 @@ ssh pi@아이피
 # 설정
 sudo nano /boot/config.txt
 
+## HDMI 없이 라즈베리파이 부팅 가능
+hdmi_save=1
+
 ## HDMI 모니터 안켜질 경우 (https://rasino.tistory.com/287)
 hdmi_group=2
 hdmi_mode=82
