@@ -52,3 +52,29 @@ sudo apt install ibus-hangul
 Preferences > Raspberry Pi Configuration > Localisation > Set Locale... > ko (Korean), Character Set: UTF-8
 리부팅
 ```
+
+## 서비스
+```sh
+# 실행중인 서비스 보기
+sudo service --status-all
+```
+
+## Anydesk
+* https://remnant24c.tistory.com/330
+```sh
+# 설치
+sudo dpkg -i anydesk_6.1.1-1_armhf.deb
+# 리스트
+sudo dpkg -l
+# 삭제
+sudo dpkg -r anydesk
+```
+
+## Utils
+```sh
+# 용량 (https://power-of-optimism.tistory.com/143)
+## 디렉토리별 용량 
+df -h
+## 전체 용량
+df .
+```
