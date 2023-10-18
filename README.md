@@ -40,6 +40,9 @@ sudo reboot
 # 재부팅 후에 상단바에 VNC 아이콘이 있어야 Server로 동작한다.
 ```
 
+### VNC Server 32-bit RasPiOS issue
+* https://github.com/raspberrypi/bookworm-feedback/issues/41
+
 ### VNC Client
 * https://www.realvnc.com/en/connect/download/viewer/macos  
 
