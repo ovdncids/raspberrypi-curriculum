@@ -72,6 +72,7 @@ systemctl stop fio.service
 * https://remnant24c.tistory.com/330
 ```sh
 # 설치
+wget https://download.anydesk.com/rpi/anydesk_6.1.1-1_armhf.deb
 sudo dpkg -i anydesk_6.1.1-1_armhf.deb
 # 리스트
 sudo dpkg -l
