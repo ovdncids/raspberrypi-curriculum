@@ -40,5 +40,15 @@ sudo reboot
 # 재부팅 후에 상단바에 VNC 아이콘이 있어야 Server로 동작한다.
 ```
 
-## VNC Client
+### VNC Client
 * https://www.realvnc.com/en/connect/download/viewer/macos  
+
+## 한글
+* https://velog.io/@thdusdl4767/Raspberry-Pi-Raspberry-Pi-%ED%95%9C%EA%B8%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%84%A4%EC%B9%98
+```sh
+sudo apt install fonts-nanum
+sudo apt install ibus-hangul
+
+Preferences > Raspberry Pi Configuration > Localisation > Set Locale... > ko (Korean), Character Set: UTF-8
+리부팅
+```
