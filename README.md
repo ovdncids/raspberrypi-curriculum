@@ -62,6 +62,8 @@ Preferences > Raspberry Pi Configuration > Localisation > Set Locale... > ko (Ko
 sudo service --status-all
 # 서비스 상태
 systemctl status fio.service
+# 서비스 상태인지 아닌지만 보기
+systemctl is-active fio.service
 # 서비스 시작
 systemctl start fio.service
 # 서비스 종료
