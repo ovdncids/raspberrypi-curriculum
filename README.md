@@ -24,8 +24,12 @@ Wifi 국가: GB
 # 접속
 ssh pi@아이피
 
-# 설정 (특별히 바꿀것 없음)
+# 설정
 sudo nano /boot/config.txt
+
+## HDMI 모니터 안켜질 경우 (https://rasino.tistory.com/287)
+hdmi_group=2
+hdmi_mode=82
 
 # VNC
 sudo raspi-config
