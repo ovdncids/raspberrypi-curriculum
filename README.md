@@ -69,7 +69,9 @@ systemctl stop fio.service
 ```
 
 ## Anydesk
+* https://anydesk.com/en/downloads/raspberry-pi
 * https://remnant24c.tistory.com/330
+* http://www.acronet.kr/29221
 ```sh
 # 설치
 wget https://download.anydesk.com/rpi/anydesk_6.1.1-1_armhf.deb
