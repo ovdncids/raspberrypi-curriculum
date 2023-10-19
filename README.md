@@ -87,6 +87,11 @@ sudo dpkg -l
 sudo dpkg -r anydesk
 ```
 
+## RDP (원격 데스트톱 연결)
+```sh
+sudo apt install xrdp
+```
+
 ## Utils
 ```sh
 # 용량 (https://power-of-optimism.tistory.com/143)
