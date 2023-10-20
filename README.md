@@ -22,7 +22,7 @@ Wifi 국가: GB
 ## 원격 접속 (putty 또는 ssh)
 ```sh
 # 접속
-ssh pi@아이피
+sudo ssh pi@아이피
 
 # 설정
 sudo nano /boot/config.txt
