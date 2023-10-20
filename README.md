@@ -62,7 +62,7 @@ ls –ld .config/ibus
 sudo rm –r .config/ibus
 Preferences > IBus 기본 설정 > 바로 가기 키 > <Shift>space
                            > 입력 방식 > 한국어 - Hangul
-상단 Task > 한글 - Hangul > 할글 상태 체크
+상단 Task > 한글 - Hangul > 한글 상태 체크
 ```
 
 ## 서비스
@@ -105,4 +105,13 @@ sudo apt install xrdp
 df -h
 ## 전체 용량
 df .
+```
+
+## Node.js
+* https://it-jm.tistory.com/19
+```sh
+sudo curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install nodejs
+리부팅
+node -v
 ```
