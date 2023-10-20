@@ -117,3 +117,11 @@ sudo apt-get install nodejs
 리부팅
 node -v
 ```
+
+## MariaDB
+* https://velog.io/@dogakday/%EB%9D%BC%EC%A6%88%EB%B2%A0%EB%A6%AC%ED%8C%8C%EC%9D%B4-Maria-DB-%EC%84%A4%EC%B9%98
+```sh
+sudo apt install mariadb-server
+systemctl is-active mysql
+sudo mysql -u root
+```
