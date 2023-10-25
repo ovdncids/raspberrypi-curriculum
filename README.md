@@ -22,7 +22,7 @@ Wifi 국가: GB
 ## 원격 접속 (putty 또는 ssh)
 ```sh
 # 접속
-sudo ssh pi@아이피
+ssh pi@아이피
 
 ## IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY! (https://cpuu.postype.com/post/30065)
 ssh-keygen -R 아이피
