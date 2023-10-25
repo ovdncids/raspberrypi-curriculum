@@ -162,6 +162,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 
 # Jenkins 설치
 sudo apt update
+sudo apt install fontconfig
 sudo apt install jenkins
 
 # invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
