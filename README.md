@@ -24,6 +24,9 @@ Wifi 국가: GB
 # 접속
 sudo ssh pi@아이피
 
+## IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY! (https://cpuu.postype.com/post/30065)
+ssh-keygen -R 아이피
+
 # 설정
 sudo nano /boot/config.txt
 
