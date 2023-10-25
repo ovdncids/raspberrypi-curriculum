@@ -33,8 +33,8 @@ hdmi_save=1
 ## HDMI 모니터 안켜질 경우 (https://rasino.tistory.com/287)
 hdmi_group=2
 hdmi_mode=82
-### 23 = 1280x769
-### 82 = 1920x1080
+### 82 = 1920x1080 (1080p)
+### 85 = 1280x700 (720p)
 
 # VNC
 sudo raspi-config
