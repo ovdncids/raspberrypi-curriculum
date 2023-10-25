@@ -128,3 +128,19 @@ sudo apt install mariadb-server
 systemctl is-active mysql
 sudo mysql -u root
 ```
+
+## Java
+* https://backendcode.tistory.com/262
+```sh
+# 설치
+sudo apt install openjdk-8-jdk
+java -version
+
+sudo nano ~/.bashrc
+# $JAVA_HOME
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+export PATH=$PATH:$JAVA_HOME/bin
+
+source ~/.bashrc
+echo $JAVA_HOME
+```
