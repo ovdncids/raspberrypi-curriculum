@@ -146,3 +146,38 @@ export PATH=$PATH:$JAVA_HOME/bin
 source ~/.bashrc
 echo $JAVA_HOME
 ```
+
+## Jenkins
+* https://pkg.jenkins.io/debian-stable
+* https://pimylifeup.com/jenkins-raspberry-pi/
+```sh
+# Jenkins key 생성
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+# Jenkins repository
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+# Jenkins 설치
+sudo apt update
+sudo apt install jenkins
+
+# invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
+systemctl is-active jenkins
+
+# Jenkins 접속
+http://아이피:8080
+
+# Unlock Jenkins
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+# Customize Jenkins (오래 걸림)
+Install suggested plugins
+
+# Create First Admin User (계정 생성)
+
+# Instance Configuration
+Not now
+```
