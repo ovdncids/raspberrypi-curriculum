@@ -134,6 +134,8 @@ sudo mysql -u root
 ```sh
 # 설치
 sudo apt install openjdk-8-jdk
+# or 
+sudo apt install openjdk-11-jdk
 java -version
 
 sudo nano ~/.bashrc
