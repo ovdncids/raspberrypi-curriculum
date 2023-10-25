@@ -182,3 +182,20 @@ Install suggested plugins
 # Instance Configuration
 Not now
 ```
+
+### Execute shell
+* Project 생성 후 > Configure > Build Steps > Execute shell > Command
+```sh
+# 3000 port 확인
+netstat -tnlp | grep 3000 || echo "3000 port is not running."
+# 3000 port 종료
+fuser -k 3000/tcp || echo "Can not turn off 3000 port"
+
+# 소스 복사, 빌드, 실행
+rm -fr /var/lib/jenkins/build/next-study-will-delete
+git clone https://github.com/ovdncids/next-study-will-delete.git /var/lib/jenkins/build/next-study-will-delete
+cd /var/lib/jenkins/build/next-study-will-delete
+npm install
+npm run build
+npm run start &
+```
