@@ -213,6 +213,9 @@ nohup npm run start &
 # 백그라운드로 10000초 sleep
 sleep 10000 &
 
+# 해당 백그라운드 찾기
+ps -ef | grep "sleep 10000"
+
 # 백그라운드 작업 리스트
 jobs -l
 
