@@ -200,13 +200,11 @@ npm run build
 npm run start &
 ```
 ```sh
-# exit 명령를 사용하면 "npm run start &" 백그라운드 명령까지 종료가 된다.
-exit
-
+# Jenkins에서는 Execute shell 끝나면 child process를 전부 kill 시키므로 BUILD_ID를 사용해서 kill을 회피한다.
 # nohup 명령을 쓰면 nohup.out 파일에 출력 내역이 저장 됨
 # &로 백그라운드 작업으로 전환(jobs에 존재) 하고, 터미널을 종료 하면 해당 백그라운드 명령은 죽이지 않는다.
-# Jenkins에서는 nohup 명령이 의도대로 동작하지 않는 듯 하다.
-nohup npm run start &
+# 2>&1는 1 = 표준 출력, 2 = 표준 에러, 2개 모두 log.out 파일로 받겠다는 뜻이다.
+BUILD_ID=dontKillMe nohup npm run start > log.out 2>&1 &
 ```
 * 백그라운드 작업
 ```sh
