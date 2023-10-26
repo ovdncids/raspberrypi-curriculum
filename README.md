@@ -231,6 +231,9 @@ jobs -l
 disown %1
 jobs -l
 
+# 첫번째 백그라운드 작업 멈춤
+kill -STOP %1
+
 # 첫번째 백그라운드 작업 종료
 kill -9 %1
 ```
