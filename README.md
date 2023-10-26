@@ -199,3 +199,33 @@ npm install
 npm run build
 npm run start &
 ```
+```sh
+# exit 명령를 사용하면 "npm run start &" 백그라운드 명령까지 종료가 된다.
+exit
+
+# nohup 명령을 쓰면 nohup.out 파일에 출력 내역이 저장 되고
+# 일반 터미널에서는 터미널 종료 후에도 해당 백그라운드 명령이 살아 있는다.
+nohup npm run start &
+```
+* 백그라운드 작업
+```sh
+# 백그라운드로 10000초 sleep
+sleep 10000 &
+
+# 백그라운드 작업 리스트
+jobs -l
+
+# 첫번째 백그라운드 작업으로 돌아가기
+fg %1
+## Ctrl + z: 백그라운드 작업 멈춤
+
+# 첫번째 백그라운드 작업이 멈추었는지 확인
+jobs -l
+
+# 첫번째 백그라운드 작업 다시 시작
+bg %1
+jobs -l
+
+# 첫번째 백그라운드 작업 종료
+kill -9 %1
+```
