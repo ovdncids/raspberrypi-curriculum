@@ -204,10 +204,10 @@ npm run start &
 # nohup 명령을 쓰면 nohup.out 파일에 출력 내역이 저장 됨
 # &로 백그라운드 작업으로 전환(jobs에 존재) 하고, 터미널을 종료 하면 해당 백그라운드 명령은 죽이지 않는다.
 # 2>&1는 1 = 표준 출력, 2 = 표준 에러, 2개 모두 log.out 파일로 받겠다는 뜻이다.
-BUILD_ID=liveNohup nohup npm run start > log.out 2>&1 &
+BUILD_ID=leaveNohup nohup npm run start > log.out 2>&1 &
 
 # nohup을 사용하지 않고, 1 = 표준 출력, 2 = 표준 에러, 동시에 다른 파일로 사용 가능하다.
-BUILD_ID=liveNpm npm run start 1> log.out 2> err.out &
+BUILD_ID=leaveNpm npm run start 1> log.out 2> err.out &
 ```
 * 백그라운드 작업
 ```sh
