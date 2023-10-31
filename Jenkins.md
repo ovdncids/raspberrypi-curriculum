@@ -2,7 +2,7 @@
 
 ## 설치
 * https://pkg.jenkins.io/debian-stable
-* https://pimylifeup.com/jenkins-raspberry-pi/
+* https://pimylifeup.com/jenkins-raspberry-pi
 ```sh
 # Jenkins key 생성
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
