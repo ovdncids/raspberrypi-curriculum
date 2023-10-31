@@ -146,3 +146,4 @@ export PATH=$PATH:$JAVA_HOME/bin
 source ~/.bashrc
 echo $JAVA_HOME
 ```
+* [Jenkins](https://github.com/ovdncids/raspberrypi-curriculum/blob/master/Jenkins.md)를 사용하려면 `java 11 버전`을 사용해야 한다.
