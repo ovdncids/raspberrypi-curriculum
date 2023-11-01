@@ -106,7 +106,7 @@ REM path에 nodejs 경로 추가
 REM set path=%path%;C:\Program Files\nodejs\;
 
 REM `npm, npx`를 실행하면 다음줄을 실행하지않고 종료되므로 `call`을 사용해야 한다.
-call npx kill-port 3000
+call npx --yes kill-port 3000
 
 rmdir /s /q next-study-will-delete
 git clone https://github.com/ovdncids/next-study-will-delete.git
