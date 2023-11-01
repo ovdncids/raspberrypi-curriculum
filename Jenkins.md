@@ -118,3 +118,4 @@ call npm run build
 REM `start cmd /k` Jenkins를 종료하기 위해 새로운 cmd로 `npm run start` 실행
 start cmd /k "npm run start 1> log.out 2> err.out"
 ```
+* 한글이 포함되면 `Input length = 1` 오류 발생할 수 있다.
