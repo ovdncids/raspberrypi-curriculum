@@ -36,7 +36,7 @@ Install suggested plugins
 Not now
 ```
 
-## Execute shell
+## Linux - Execute shell
 * Project 생성 후 > Configure > Build Steps > Execute shell > Command
 ```sh
 # 3000 port 확인
@@ -96,7 +96,8 @@ kill -STOP %1
 kill -9 %1
 ```
 
-## Execute Windows batch command
+## Windows - Execute Windows batch command
+* [This account either does not have the privilege to logon as a service](https://stackoverflow.com/questions/63410442/jenkins-installation-windows-10-service-logon-credentials)
 ```cmd
 REM whoami 대신 cd를 사용한다.
 cd
@@ -117,4 +118,3 @@ call npm run build
 REM `start cmd /k` Jenkins를 종료하기 위해 새로운 cmd로 `npm run start` 실행
 start cmd /k "npm run start 1> log.out 2> err.out"
 ```
-* [This account either does not have the privilege to logon as a service](https://stackoverflow.com/questions/63410442/jenkins-installation-windows-10-service-logon-credentials)
