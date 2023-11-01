@@ -117,3 +117,4 @@ call npm run build
 REM `start cmd /k` Jenkins를 종료하기 위해 새로운 cmd로 `npm run start` 실행
 start cmd /k "npm run start 1> log.out 2> err.out"
 ```
+* [This account either does not have the privilege to logon as a service](https://stackoverflow.com/questions/63410442/jenkins-installation-windows-10-service-logon-credentials)
