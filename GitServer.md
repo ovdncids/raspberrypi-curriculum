@@ -49,7 +49,7 @@ ssh-keygen
 ssh-copy-id -i ~/.ssh/git_rsa.pub -p 포트 git@아이피
 ## 로그인
 
-# 셀에 등록
+# 셀에 등록
 ssh-agent zsh && ssh-add ~/.ssh/git_rsa
 ## 셸이 새로 열린다.
 exit
