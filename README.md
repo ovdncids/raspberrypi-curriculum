@@ -147,3 +147,36 @@ source ~/.bashrc
 echo $JAVA_HOME
 ```
 * [Jenkins](https://github.com/ovdncids/raspberrypi-curriculum/blob/master/Jenkins.md)를 사용하려면 `java 11 버전`을 사용해야 한다.
+
+## Git Server
+```sh
+# Git Server 설치
+sudo apt install git-core
+# 사용자 git 추가
+sudo useradd -s /bin/bash -m git
+sudo passwd git
+su git
+
+# Repository 만들기
+mkdir /home/git/Repositories
+mkdir /home/git/Repositories/repository-a
+cd /home/git/Repositories/repository-a
+git init --bare
+
+# Project 클론 (편함, 원격 클론 가능)
+mkdir /home/git/Projects
+cd /home/git/Projects
+git clone ssh://git@localhost:/home/git/Repositories/repository-a
+
+# Project에 remote 추가
+cd /home/git/Projects
+mkdir repository-a
+cd repository-a
+git init
+git remote add origin git@localhost:/home/git/Repositories/repository-a
+echo "# README" >> README.md
+git add .
+git commit -m "README.md"
+git push origin master
+```
+* `git clone ssh://git@[ip]:[포트번호]/home/git/Repositories/repository-a`
