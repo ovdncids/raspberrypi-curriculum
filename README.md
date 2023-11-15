@@ -116,9 +116,17 @@ df .
 * https://it-jm.tistory.com/19
 ```sh
 sudo curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt-get install nodejs
+sudo apt install nodejs
 리부팅
 node -v
+```
+
+### NVM
+* https://github.com/nvm-sh/nvm
+````sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+source /home/pi/.bashrc
+nvm list
 ```
 
 ## MariaDB
