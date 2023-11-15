@@ -123,7 +123,7 @@ node -v
 
 ### NVM
 * https://github.com/nvm-sh/nvm
-````sh
+```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 source /home/pi/.bashrc
 nvm list
