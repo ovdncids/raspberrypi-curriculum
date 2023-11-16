@@ -34,7 +34,8 @@ git remote add origin git@localhost:/home/git/Repositories/repository-a
 echo "# README" >> README.md
 git add .
 git commit -m "README.md"
-git push --set-upstream origin main
+git push
+## git push --set-upstream origin main
 ```
 * `git clone ssh://git@[ip]:[포트번호]/home/git/Repositories/repository-a`
 
