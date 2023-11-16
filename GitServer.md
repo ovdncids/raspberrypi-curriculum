@@ -2,6 +2,7 @@
 ## 설치
 ```sh
 sudo apt install git-core
+
 # 사용자 git 추가
 sudo useradd -s /bin/bash -m git
 sudo passwd git
