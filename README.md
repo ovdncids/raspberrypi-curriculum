@@ -70,8 +70,8 @@ sudo apt install ibus-hangul
 Preferences > Raspberry Pi Configuration > Localisation > Set Locale... > ko (Korean), Character Set: UTF-8
 리부팅
 
-ls –ld .config/ibus
-sudo rm –r .config/ibus
+ls –ld ~/.config/ibus
+sudo rm -fr ~/.config/ibus
 Preferences > IBus 기본 설정 > 바로 가기 키 > <Shift>space
                            > 입력 방식 > 한국어 - Hangul
 상단 Task > 한글 - Hangul > 한글 상태 체크
