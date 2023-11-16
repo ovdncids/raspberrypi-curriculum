@@ -47,6 +47,7 @@ git push
 # SSH 키 파일 만들기
 ssh-keygen
 ## Enter file in which to save the key (/Users/사용자/.ssh/id_rsa): /Users/사용자/.ssh/git_rsa
+## Jenkins 계정의 경우 id_rsa 파일이 없으므로 id_rsa 파일로 생성
 
 # SSH 키 파일에 연결 정보 넣기
 ssh-copy-id -i ~/.ssh/git_rsa.pub -p 포트 git@아이피
