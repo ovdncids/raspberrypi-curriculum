@@ -46,7 +46,7 @@ fuser -k 3000/tcp || echo "Can not turn off 3000 port"
 
 # 소스 복사, 빌드, 실행
 rm -fr /var/lib/jenkins/build/next-study-will-delete
-git clone https://github.com/ovdncids/next-study-will-delete.git /var/lib/jenkins/build/next-study-will-delete
+git clone --branch main https://github.com/ovdncids/next-study-will-delete.git /var/lib/jenkins/build/next-study-will-delete
 cd /var/lib/jenkins/build/next-study-will-delete
 npm install
 npm run build
@@ -110,7 +110,7 @@ call npm install -g kill-port
 call npx kill-port 3000
 
 rmdir /s /q next-study-will-delete
-git clone https://github.com/ovdncids/next-study-will-delete.git
+git clone --branch main https://github.com/ovdncids/next-study-will-delete.git
 cd next-study-will-delete
 
 call npm install
