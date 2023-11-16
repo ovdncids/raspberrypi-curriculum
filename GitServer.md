@@ -30,7 +30,7 @@ cd /home/git/Projects
 mkdir repository-a
 cd repository-a
 git init
-git remote add origin git@localhost:/home/git/Repositories/repository-a
+git remote add origin ssh://git@localhost:/home/git/Repositories/repository-a
 echo "# README" >> README.md
 git add .
 git commit -m "README.md"
