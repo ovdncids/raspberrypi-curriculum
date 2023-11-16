@@ -17,7 +17,7 @@ cd /home/git/Repositories/repository-a
 git init --bare
 ```
 
-## Project 클론 (편함, 원격 클론 가능)
+## Project 클론
 ```sh
 mkdir /home/git/Projects
 cd /home/git/Projects
@@ -54,6 +54,7 @@ ssh-copy-id -i ~/.ssh/git_rsa.pub -p 포트 git@아이피
 
 # 셀에 등록
 ssh-agent zsh && ssh-add ~/.ssh/git_rsa
+# ssh-agent bash && ssh-add ~/.ssh/git_rsa
 ## 셸이 새로 열린다.
 exit
 git pull
