@@ -87,16 +87,16 @@ npm run start 1> log.out 2> err.out &
 chmod 755 ./startup.sh
 ```
 ```sh
-sudo nano /etc/init.d/jenkins-startup.sh
+# 부팅시 실행하는 스크립트 파일
+sudo nano /etc/rc.local
 ```
 ```sh
-#!/usr/bin/env bash
-
+# Jenkins
 sudo su - jenkins -c './startup.sh'
+## /etc/rc.local 아래 exit 0이 있으므로 상단에 추가
 ```
 ```sh
-sudo chmod 755 jenkins-startup.sh
-sudo ./jenkins-startup.sh
+sudo reboot
 ```
 
 * 백그라운드 작업
