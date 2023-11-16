@@ -45,7 +45,7 @@ Display Options > VNC Resolution > 1920x1080 또는 1280x720
 Interface Options > VNC > Would you like the VNC server > Yes
 
 sudo reboot
-# 재부팅 후에 상단바에 VNC 아이콘이 있어야 Server로 동작한다.
+# 재부팅 후에 상단 Task에 VNC 아이콘이 있어야 Server로 동작한다.
 ```
 
 ### VNC Server 32-bit RasPiOS issue
@@ -55,7 +55,7 @@ sudo reboot
 * https://www.realvnc.com/en/connect/download/viewer/macos  
 
 ## Update
-* 상단바의 업데이트 아이콘과 동일
+* 상단 Task의 업데이트 아이콘과 동일
 ```sh
 sudo apt update
 sudo apt upgrade
@@ -70,7 +70,7 @@ sudo apt install ibus-hangul
 Preferences > Raspberry Pi Configuration > Localisation > Set Locale... > ko (Korean), Character Set: UTF-8
 리부팅
 
-ls –ld ~/.config/ibus
+sudo ls –ld ~/.config/ibus
 sudo rm -fr ~/.config/ibus
 Preferences > IBus 기본 설정 > 바로 가기 키 > <Shift>space
                            > 입력 방식 > 한국어 - Hangul
