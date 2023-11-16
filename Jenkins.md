@@ -21,7 +21,7 @@ sudo apt install jenkins
 # invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
 systemctl is-active jenkins
 
-# Jenkins 접속
+# Jenkins 접속 (시간 조금 걸림)
 http://아이피:8080
 
 # Unlock Jenkins
