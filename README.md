@@ -41,7 +41,7 @@ hdmi_mode=82
 
 # VNC
 sudo raspi-config
-Display Options > VNC Resolution > 1920x1080
+Display Options > VNC Resolution > 1920x1080 또는 1280x1080
 Interface Options > VNC > Would you like the VNC server > Yes
 
 sudo reboot
