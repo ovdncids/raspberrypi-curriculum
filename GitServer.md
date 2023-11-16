@@ -46,7 +46,7 @@ git push
 ```sh
 # SSH 키 파일 만들기
 ssh-keygen
-## Enter file in which to save the key (/Users/사용자/.ssh/id_rsa): /Users/사용자/.ssh/git_rsa
+## Enter file in which to save the key (/Users/사용자/.ssh/id_rsa): /Users/사용자/.ssh/git_rsa
 
 # SSH 키 파일에 연결 정보 넣기
 ssh-copy-id -i ~/.ssh/git_rsa.pub -p 포트 git@아이피
