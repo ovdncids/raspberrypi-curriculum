@@ -38,7 +38,12 @@ Not now
 
 ## Linux - Execute shell
 * Project 생성 후 > Configure > Build Steps > Execute shell > Command
+* jenkins 계정은 `~/.bashrc 파일`을 읽지 않고 `source` 명령 또한 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
 ```sh
+#!/usr/bin/env bash
+source ~/.bashrc
+nvm use 20.8.1
+
 # 3000 port 확인
 netstat -tnlp | grep 3000 || echo "3000 port is not running."
 # 3000 port 종료
