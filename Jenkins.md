@@ -69,6 +69,36 @@ BUILD_ID=leaveNohup nohup npm run start > log.out 2>&1 &
 # nohup을 사용하지 않고, 1 = 표준 출력, 2 = 표준 에러, 동시에 다른 파일로 사용 가능하다.
 BUILD_ID=leaveNpm npm run start 1> log.out 2> err.out &
 ```
+* [Startup](https://eine.tistory.com/entry/%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%B6%80%ED%8C%85%EA%B3%BC%EC%A0%95%EA%B3%BC-%EB%B6%80%ED%8C%85%EC%8B%9C-%EB%A7%88%EB%8B%A4-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89Startup-Script)
+```sh
+sudo su - jenkins
+nano /var/lib/jenkins/startup.sh
+```
+```sh
+#!/usr/bin/env bash
+
+source ~/.bashrc
+nvm use 20.8.1
+npm -v
+cd /var/lib/jenkins/build/next-study-will-delete
+npm run start 1> log.out 2> err.out &
+```
+```sh
+chmod 755 ./startup.sh
+```
+```sh
+sudo nano /etc/init.d/jenkins-startup.sh
+```
+```sh
+#!/usr/bin/env bash
+
+sudo su - jenkins -c './startup.sh'
+```
+```sh
+sudo chmod 755 jenkins-startup.sh
+sudo ./jenkins-startup.sh
+```
+
 * 백그라운드 작업
 ```sh
 # 백그라운드로 10000초 sleep
