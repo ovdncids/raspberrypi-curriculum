@@ -54,6 +54,13 @@ sudo reboot
 ### VNC Client
 * https://www.realvnc.com/en/connect/download/viewer/macos  
 
+## Update
+* 상단바의 업데이트 아이콘과 동일
+```sh
+sudo apt update
+sudo apt upgrade
+```
+
 ## 한글
 * https://velog.io/@thdusdl4767/Raspberry-Pi-Raspberry-Pi-%ED%95%9C%EA%B8%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%84%A4%EC%B9%98
 ```sh
