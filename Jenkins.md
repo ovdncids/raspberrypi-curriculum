@@ -93,7 +93,8 @@ sudo nano /etc/rc.local
 ```sh
 # Jenkins
 sudo su - jenkins -c './startup.sh'
-## /etc/rc.local 아래 exit 0이 있으므로 상단에 추가
+## jenkins 계정으로 /var/lib/jenkins/startup.sh 파일 실행
+## /etc/rc.local 아래 exit 0이 있으므로 상단부에 추가
 ```
 ```sh
 sudo reboot
