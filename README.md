@@ -132,7 +132,7 @@ node -v
 * https://github.com/nvm-sh/nvm
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-source /home/pi/.bashrc
+source ~/.bashrc
 nvm list
 ```
 
