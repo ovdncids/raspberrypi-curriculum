@@ -23,13 +23,13 @@ systemctl is-active jenkins
 # Jenkins 접속
 http://아이피:8080
 ## 로딩 페이지에서 5분동안 못 넘어가는 경우
-## jenkins 계정으로 jenkins.war 파일 실행 해서 5분안에 Unlock Jenkins 페이지까지 이동 되는지 확인
+## jenkins 계정으로 jenkins.war 파일을 실행해서 5분안에 Unlock Jenkins 페이지까지 이동 되는지 확인
 systemctl stop jenkins
 sudo su - jenkins -c "/usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080"
 
 ## 서비스의 Timeout 확인: 기본 90초
 sudo systemctl show jenkins.service -p TimeoutStopUSec
-### 90초 안에 jenkins.war 파일을 로드하지 못 해서 계속 90초마다 새로 시작 시킴 (900초로 수정)
+### 90초 안에 jenkins.war 파일을 로드하지 못 해서 systemctl가 계속 90초마다 새로 시작 시킴 (900초로 수정)
 sudo nano /usr/lib/systemd/system/jenkins.service
 TimeoutStartSec=900
 sudo reboot
