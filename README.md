@@ -162,4 +162,4 @@ source ~/.bashrc
 echo $JAVA_HOME
 ```
 * [Jenkins](https://github.com/ovdncids/raspberrypi-curriculum/blob/master/Jenkins.md)를 사용하려면 `java 11 버전`을 사용해야 한다.
-* `$JAVA_HOME`이 없으면 `Jenkins`가 진행중 무한로딩 된다.
+* `$JAVA_HOME`이 없어도 `Jenkins`가 실행 된다.
