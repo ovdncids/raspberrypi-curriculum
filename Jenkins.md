@@ -19,12 +19,13 @@ sudo apt install fontconfig (선택 사항)
 sudo apt install jenkins
 ## invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
 systemctl is-active jenkins
-systemctl stop jenkins
-sudo su - jenkins -c "/usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080"
 
 # Jenkins 접속
 http://아이피:8080
-## 로딩 페이지에서 10분동안 안 넘어가는 경우 `jenkins 실행 콘솔`에서 enter
+## 로딩 페이지에서 10분동안 안 넘어가는 경우
+systemctl stop jenkins
+sudo su - jenkins -c "/usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080"
+### 그래도 안되면 콘솔에서 enter도 입력해 본다.
 
 # Unlock Jenkins
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
