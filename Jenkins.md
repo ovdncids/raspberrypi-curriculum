@@ -73,7 +73,7 @@ BUILD_ID=leaveNohup nohup npm run start > log.out 2>&1 &
 BUILD_ID=leaveNpm npm run start 1> log.out 2> err.out &
 ```
 
-### Startup
+### Startup - NVM
 * [리눅스 부팅 과정](https://eine.tistory.com/entry/%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%B6%80%ED%8C%85%EA%B3%BC%EC%A0%95%EA%B3%BC-%EB%B6%80%ED%8C%85%EC%8B%9C-%EB%A7%88%EB%8B%A4-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89Startup-Script)
 * `jenkins 계정`의 루트는 `/var/lib/jenkins`이고 로그인 하여도 `~/.bashrc 파일`을 읽지 않는다.
 * `.sh 파일`에서는 `source` 명령을 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
