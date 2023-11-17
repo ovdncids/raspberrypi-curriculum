@@ -15,13 +15,14 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 
 # Jenkins 설치
 sudo apt update
-sudo apt install fontconfig
+sudo apt install fontconfig (선택 사항)
 sudo apt install jenkins
+## invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
 
-# invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
 systemctl is-active jenkins
+## deactivating인 경우 1분 후 재실행 또는 재부팅
 
-# Jenkins 접속 (시간 조금 걸림)
+# Jenkins 접속 (오래 걸림)
 http://아이피:8080
 
 # Unlock Jenkins
@@ -38,13 +39,6 @@ Not now
 
 ## Linux - Execute shell
 * Project 생성 후 > Configure > Build Steps > Execute shell > Command
-* `jenkins 계정`의 루트는 `/var/lib/jenkins`이고 `~/.bashrc 파일`을 읽지 않는다.
-* 또한 `Execute shell`에서 `source` 명령 또한 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
-```sh
-#!/usr/bin/env bash
-source ~/.bashrc
-nvm use 20.8.1
-```
 ```sh
 # 3000 port 확인
 netstat -tnlp | grep 3000 || echo "3000 port is not running."
@@ -69,10 +63,20 @@ BUILD_ID=leaveNohup nohup npm run start > log.out 2>&1 &
 # nohup을 사용하지 않고, 1 = 표준 출력, 2 = 표준 에러, 동시에 다른 파일로 사용 가능하다.
 BUILD_ID=leaveNpm npm run start 1> log.out 2> err.out &
 ```
-* [Startup](https://eine.tistory.com/entry/%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%B6%80%ED%8C%85%EA%B3%BC%EC%A0%95%EA%B3%BC-%EB%B6%80%ED%8C%85%EC%8B%9C-%EB%A7%88%EB%8B%A4-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89Startup-Script)
+
+### Startup
+* [리눅스 부팅 과정](https://eine.tistory.com/entry/%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%B6%80%ED%8C%85%EA%B3%BC%EC%A0%95%EA%B3%BC-%EB%B6%80%ED%8C%85%EC%8B%9C-%EB%A7%88%EB%8B%A4-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89Startup-Script)
+* `jenkins 계정`의 루트는 `/var/lib/jenkins`이고 로그인 하여도 `~/.bashrc 파일`을 읽지 않는다.
+* `.sh 파일`에서는 `source` 명령을 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
 ```sh
 sudo su - jenkins
-nano /var/lib/jenkins/startup.sh
+nano ~/.bashrc
+# NVM
+export NVM_DIR="/home/pi/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nano ~/startup.sh
 ```
 ```sh
 #!/usr/bin/env bash
@@ -89,18 +93,22 @@ chmod 755 ./startup.sh
 ```sh
 # 부팅시 실행하는 스크립트 파일
 sudo nano /etc/rc.local
-```
-```sh
 # Jenkins
 sudo su - jenkins -c './startup.sh'
 ## jenkins 계정으로 /var/lib/jenkins/startup.sh 파일 실행
 ## /etc/rc.local 아래 exit 0이 있으므로 상단부에 추가
-```
-```sh
+
 sudo reboot
 ```
 
-* 백그라운드 작업
+* `Jenkins - Execute shell`에서 또한 `source` 명령을 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
+```sh
+#!/usr/bin/env bash
+source ~/.bashrc
+nvm use 20.8.1
+```
+
+### 백그라운드 작업
 ```sh
 # 백그라운드로 10000초 sleep
 sleep 10000 &
