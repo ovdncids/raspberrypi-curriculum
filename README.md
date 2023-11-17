@@ -136,20 +136,6 @@ source ~/.bashrc
 nvm list
 ```
 
-#### 다른 계정에서 사용할 경우
-```sh
-namo ~/.bashrc
-```
-```sh
-# NVM
-export NVM_DIR="/home/pi/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-```
-```sh
-source ~/.bashrc
-```
-
 ## MariaDB
 * https://velog.io/@dogakday/%EB%9D%BC%EC%A6%88%EB%B2%A0%EB%A6%AC%ED%8C%8C%EC%9D%B4-Maria-DB-%EC%84%A4%EC%B9%98
 ```sh
