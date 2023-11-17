@@ -15,15 +15,17 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 
 # Jenkins 설치
 sudo apt update
-sudo apt install fontconfig (선택 사항)
+sudo apt install fontconfig
 sudo apt install jenkins
 ## invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
-
 systemctl is-active jenkins
-## deactivating인 경우 1분 후 재실행 또는 재부팅
+sudo reboot
 
-# Jenkins 접속 (오래 걸림)
+# Jenkins 접속
 http://아이피:8080
+## 로딩 페이지가 10분이상 안 넘어가는 경우 명령으로 jenkins 실행
+systemctl stop jenkins
+sudo su - jenkins -c "/usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080"
 
 # Unlock Jenkins
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
