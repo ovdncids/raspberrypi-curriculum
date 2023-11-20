@@ -100,7 +100,7 @@ npm run start 1> log.out 2> err.out &
 chmod 755 ./startup.sh
 ```
 ```sh
-# 부팅시 실행하는 스크립트 파일
+# 부팅시 실행하는 스크립트 파일 (pi 계정으로 진행)
 sudo nano /etc/rc.local
 # Jenkins
 sudo su - jenkins -c './startup.sh'
