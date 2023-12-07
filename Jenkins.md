@@ -56,6 +56,12 @@ nano /var/lib/jenkins/config.xml
 sudo service jenkins restart
 ```
 
+### java.nio.charset.UnmappableCharacterException
+```sh
+# 한글이 들어 갔는지 확인
+-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
+```
+
 ## Linux - Execute shell
 * Project 생성 후 > Configure > Build Steps > Execute shell > Command
 ```sh
