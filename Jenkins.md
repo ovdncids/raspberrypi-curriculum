@@ -46,6 +46,16 @@ Install suggested plugins
 Not now
 ```
 
+### 로그인 비밀번호를 잊어버린 경우
+* https://chati.tistory.com/23
+```sh
+sudo nano /var/lib/jenkins/config.xml
+
+<useSecurity>false</useSecurity>
+
+sudo service jenkins restart
+```
+
 ## Linux - Execute shell
 * Project 생성 후 > Configure > Build Steps > Execute shell > Command
 ```sh
