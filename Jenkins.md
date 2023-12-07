@@ -58,8 +58,17 @@ sudo service jenkins restart
 
 ### java.nio.charset.UnmappableCharacterException
 ```sh
-# 한글이 들어 갔는지 확인
--Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
+# Execute shell 안에 한글이 들어 갔는지 확인
+
+# 서비스를 사용하지 않는 방법 (-Dfile.encoding=UTF-8)
+sudo su - jenkins -c "/usr/bin/java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080"
+
+# 서비스를 사용하는 방법
+nano /usr/lib/systemd/system/jenkins.service
+Environment="JAVA_OPTS=-Djava.awt.headless=true -Dfile.encoding=UTF-8"
+sudo apt install systemctl
+systemctl stop jenkins
+systemctl start jenkins
 ```
 
 ## Linux - Execute shell
