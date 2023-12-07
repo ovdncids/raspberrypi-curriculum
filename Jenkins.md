@@ -69,6 +69,7 @@ Environment="JAVA_OPTS=-Djava.awt.headless=true -Dfile.encoding=UTF-8"
 sudo apt install systemctl
 systemctl stop jenkins
 systemctl start jenkins
+## service jenkins start를 사용하면 `/usr/lib/systemd/system/jenkins.service` 설정이 적용 안될 수 있다.
 ```
 
 ## Linux - Execute shell
