@@ -70,6 +70,7 @@ sudo apt install systemctl
 systemctl stop jenkins
 systemctl start jenkins
 ## service jenkins start를 사용하면 `/usr/lib/systemd/system/jenkins.service` 설정이 적용 안될 수 있다.
+## Jenkins > Manage Jenkins > Status Information > System Properties > file.encoding > UTF-8 적용 되었는지 확인
 ```
 
 ## Linux - Execute shell
