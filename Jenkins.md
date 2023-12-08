@@ -72,6 +72,12 @@ systemctl start jenkins
 ## service jenkins start를 사용하면 `/usr/lib/systemd/system/jenkins.service` 설정이 적용 안될 수 있다.
 ## Jenkins > Manage Jenkins > Status Information > System Properties > file.encoding > UTF-8 적용 되었는지 확인
 ```
+<!--
+systemctl daemon-reload
+systemctl restart jenkins.service
+* systemctl daemon-reload Failed to connect to bus: Host is down
+* https://wiki.terzeron.com/OS_%EC%9D%BC%EB%B0%98_%EC%8B%9C%EC%8A%A4%ED%85%9C/Docker/container%EC%97%90%EC%84%9C_systemctl_%EB%AA%85%EB%A0%B9_%EC%82%AC%EC%9A%A9%EC%8B%9C_Failed_to_get_D-Bus_connection_Operation_not_permitted_%EC%97%90%EB%9F%AC_%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0#google_vignette
+-->
 
 ## Linux - Execute shell
 * Project 생성 후 > Configure > Build Steps > Execute shell > Command
