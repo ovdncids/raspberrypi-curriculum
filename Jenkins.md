@@ -114,14 +114,15 @@ BUILD_ID=leaveNpm npm run start 1> log.out 2> err.out &
 ```sh
 sudo su - jenkins
 nano ~/.bashrc
+
 # NVM
 export NVM_DIR="/home/pi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-nano ~/startup.sh
 ```
 ```sh
+nano ~/startup.sh
+
 #!/usr/bin/env bash
 
 source ~/.bashrc
