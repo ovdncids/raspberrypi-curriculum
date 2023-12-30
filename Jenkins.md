@@ -19,6 +19,8 @@ sudo apt install fontconfig (선택 사항)
 sudo apt install jenkins
 ## invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
 systemctl is-active jenkins
+## Failed to connect to bus: Host is down (sudo apt install systemctl)
+## `service jenkins start`를 사용하면 `service jenkins stop`이 되지 않을 수 있다.
 
 # Jenkins 접속
 http://아이피:8080
