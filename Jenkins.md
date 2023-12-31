@@ -124,15 +124,15 @@ export NVM_DIR="/home/pi/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ```
 ```sh
-nano ~/startup.sh
+nano /var/lib/jenkins/build/next-study-will-delete/startup.sh
 
 #!/usr/bin/env bash
 
 source ~/.bashrc
 nvm use 20.8.1
 npm -v
-cd /var/lib/jenkins/build/next-study-will-delete
-npm run start 1> log.out 2> err.out &
+cd /var/lib/jenkins/build/next-study-will-delete/source
+npm run start 1> ../log.out 2> ../err.out &
 ```
 ```sh
 chmod 755 ./startup.sh
