@@ -144,6 +144,7 @@ npm run start 1> ../log.out 2> ../err.out
 ```
 ```sh
 chmod 755 /var/lib/jenkins/build/next-study-will-delete/startup.sh
+/var/lib/jenkins/build/next-study-will-delete/startup.sh
 ```
 ```sh
 # 부팅시 실행하는 스크립트 파일 (pi 계정으로 진행)
@@ -152,7 +153,7 @@ sudo nano /root/.bashrc
 sudo nano /etc/rc.local
 
 # Jenkins - next-study-will-delete
-sudo su - jenkins -c '/var/lib/jenkins/build/next-study-will-delete/startup.sh'
+sudo su - jenkins -c '/var/lib/jenkins/build/next-study-will-delete/startup.sh' &
 ## jenkins 계정으로 /var/lib/jenkins/build/next-study-will-delete/startup.sh 파일 실행
 ## /etc/rc.local 하단부에 `exit 0`이 있으므로 상단부에 추가
 
