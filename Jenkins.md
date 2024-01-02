@@ -109,7 +109,7 @@ BUILD_ID=leaveNohup nohup npm run start > ../log.out 2>&1 &
 BUILD_ID=leaveNpm npm run start 1> ../log.out 2> ../err.out &
 ```
 
-### Startup - NVM
+## Startup - NVM
 * [리눅스 부팅 과정](https://eine.tistory.com/entry/%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%B6%80%ED%8C%85%EA%B3%BC%EC%A0%95%EA%B3%BC-%EB%B6%80%ED%8C%85%EC%8B%9C-%EB%A7%88%EB%8B%A4-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89Startup-Script)
 * `jenkins 계정`의 루트는 `/var/lib/jenkins`이고 로그인 하여도 `~/.bashrc 파일`을 읽지 않는다.
 * `.sh 파일`에서는 `source` 명령을 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
@@ -132,7 +132,7 @@ source ~/.bashrc
 nvm use 20.8.1
 npm -v
 cd /var/lib/jenkins/build/next-study-will-delete/source
-npm run start 1> ../log.out 2> ../err.out &
+npm run start 1> ../log.out 2> ../err.out
 ```
 ```sh
 chmod 755 /var/lib/jenkins/build/next-study-will-delete/startup.sh
@@ -151,6 +151,39 @@ sudo su - jenkins -c '/var/lib/jenkins/build/next-study-will-delete/startup.sh'
 sudo reboot
 ```
 
+### Service - startup
+* [서비스 등록](https://passwd.tistory.com/entry/Ubuntu-Systemd-service-%EB%93%B1%EB%A1%9D)
+* [서비스 레벨](https://www.lesstif.com/system-admin/linux-systemd-systemctl-run-level-target-98926803.html)
+* [도커에서 서비스 실행](https://stackoverflow.com/questions/25135897/how-to-automatically-start-a-service-when-running-a-docker-container)
+```sh
+# 서비스 활성화 유무
+sudo systemctl list-unit-files
+
+cd /etc/systemd/system
+sudo nano next-study-will-delete.service
+```
+```service
+[Unit]
+Description=Jenkins - next-study-will-delete
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/su - jenkins -c '/var/lib/jenkins/build/next-study-will-delete/startup.sh'
+Type=simple
+
+[Install]
+WantedBy=default.target
+```
+```sh
+systemctl daemon-reload
+systemctl start next-study-will-delete
+top
+systemctl stop next-study-will-delete
+
+# 도커는 `/root/.bashrc`에 `systemctl start next-study-will-delete` 추가
+```
+
+### Jenkins - bash
 * `Jenkins - Execute shell`에서 또한 `source` 명령을 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
 ```sh
 #!/usr/bin/env bash
@@ -158,7 +191,7 @@ source ~/.bashrc
 nvm use 20.8.1
 ```
 
-### 백그라운드 작업
+## 백그라운드 작업
 ```sh
 # 백그라운드로 10000초 sleep
 sleep 10000 &
