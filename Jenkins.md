@@ -143,7 +143,9 @@ cd /var/lib/jenkins/build/next-study-will-delete/source
 npm run start 1> ../log.out 2> ../err.out
 ```
 ```sh
+# 실행 권한 주기
 chmod 755 /var/lib/jenkins/build/next-study-will-delete/startup.sh
+# 실행
 /var/lib/jenkins/build/next-study-will-delete/startup.sh
 ```
 ```sh
