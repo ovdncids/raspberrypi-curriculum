@@ -191,8 +191,8 @@ systemctl start next-study-will-delete
 top
 systemctl stop next-study-will-delete
 
-# 서비스를 시작하고 재시작하면 서비스가 다시시작되고, 서비스를 종료하고 재시작하면 서비스가 시작되지 않는다.
-# 하지만 도커는 재시작 계념이 없으므로 `/root/.bashrc`에 `systemctl start next-study-will-delete` 추가 해야한다.
+# 서비스를 시작하고 리부팅하면 서비스가 다시 시작되고, 서비스를 종료하고 리부팅하면 서비스는 시작되지 않는다.
+# 하지만 도커는 리부팅 계념이 없으므로 `/root/.bashrc`에 `systemctl start next-study-will-delete` 추가 해야한다.
 ```
 
 ## 백그라운드 작업
