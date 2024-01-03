@@ -149,10 +149,10 @@ chmod 755 /var/lib/jenkins/build/next-study-will-delete/startup.sh
 /var/lib/jenkins/build/next-study-will-delete/startup.sh
 ```
 ```sh
-# 부팅시 실행하는 스크립트 파일 (pi 계정으로 진행)
-sudo nano /root/.bashrc
-# 또는
+# 부팅시 실행하는 스크립트 파일 (라즈베리파이)
 sudo nano /etc/rc.local
+# 도커 (도커는 컨테이너 재실행시에 `/root/.bashrc`가 실행 된다.)
+sudo nano /root/.bashrc
 
 # Jenkins - next-study-will-delete
 sudo su - jenkins -c '/var/lib/jenkins/build/next-study-will-delete/startup.sh' &
