@@ -21,6 +21,7 @@ sudo apt install jenkins
 systemctl is-active jenkins
 ## Failed to connect to bus: Host is down (sudo apt install systemctl)
 ## `service jenkins start`를 사용하면 `service jenkins stop`이 되지 않을 수 있다.
+## sudo service --status-all (서비스 상태 보기)
 
 # Jenkins 접속
 http://아이피:8080
@@ -196,9 +197,15 @@ systemctl enable --now next-study-will-delete.service
 # .service 파일의 수정이 있을 경우 리로드
 sudo systemctl daemon-reload
 
+# 서비스 시작 (1회성)
 sudo systemctl start next-study-will-delete
 top
+# 서비스 종료 (1회성)
 sudo systemctl stop next-study-will-delete
+# 서비스 상태
+sudo systemctl stop next-study-will-delete
+# 서비스 중인지 확인
+sudo systemctl is-active next-study-will-delete
 
 # 하지만 도커는 리부팅 계념이 없으므로 `/root/.bashrc`에 `systemctl start next-study-will-delete` 추가 해야한다.
 ```
