@@ -187,6 +187,7 @@ ExecStop=/usr/bin/su - jenkins -c 'fuser -k 3000/tcp'
 [Install]
 WantedBy=default.target
 ```
+* [.service 파일 작성법](https://coding-maggot.tistory.com/76)
 ```sh
 # 지금 서비스 시작과 서비스 enable(재부팅 하여도 서비스를 실행) 시킨다.
 systemctl enable --now next-study-will-delete.service
