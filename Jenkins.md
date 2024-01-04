@@ -169,6 +169,7 @@ sudo reboot
 ```sh
 # 서비스 활성화 유무
 sudo systemctl list-units
+sudo systemctl list-unit-files
 
 cd /etc/systemd/system
 sudo nano next-study-will-delete.service
@@ -179,19 +180,24 @@ Description=Jenkins - next-study-will-delete
 After=network-online.target
 
 [Service]
-ExecStart=/usr/bin/su - jenkins -c '/var/lib/jenkins/build/next-study-will-delete/startup.sh'
 Type=simple
+ExecStart=/usr/bin/su - jenkins -c '/var/lib/jenkins/build/next-study-will-delete/startup.sh'
+ExecStop=/usr/bin/su - jenkins -c 'fuser -k 3000/tcp'
 
 [Install]
 WantedBy=default.target
 ```
 ```sh
+# 지금 서비스 시작과 서비스 enable(재부팅 하여도 서비스를 실행) 시킨다.
+systemctl enable --now next-study-will-delete.service
+
+# .service 파일의 수정이 있을 경우 리로드
 sudo systemctl daemon-reload
+
 sudo systemctl start next-study-will-delete
 top
 sudo systemctl stop next-study-will-delete
 
-# 서비스를 시작하고 리부팅하면 서비스가 다시 시작되고, 서비스를 종료하고 리부팅하면 서비스는 시작되지 않는다.
 # 하지만 도커는 리부팅 계념이 없으므로 `/root/.bashrc`에 `systemctl start next-study-will-delete` 추가 해야한다.
 ```
 
