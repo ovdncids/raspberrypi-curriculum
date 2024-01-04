@@ -77,20 +77,6 @@ Preferences > IBus 기본 설정 > 바로 가기 키 > <Shift>space
 상단 Task > 한글 - Hangul > 한글 상태 체크
 ```
 
-## 서비스
-```sh
-# 실행중인 서비스 보기
-sudo service --status-all
-# 서비스 상태
-systemctl status fio.service
-# 서비스 상태인지 아닌지만 보기
-systemctl is-active fio.service
-# 서비스 시작 (1회성)
-systemctl start fio.service
-# 서비스 종료 (1회성)
-systemctl stop fio.service
-```
-
 ## Anydesk
 * https://anydesk.com/en/downloads/raspberry-pi
 * https://remnant24c.tistory.com/330
