@@ -53,11 +53,23 @@ Not now
 * https://chati.tistory.com/23
 ```sh
 nano /var/lib/jenkins/config.xml
-
 <useSecurity>false</useSecurity>
 
-sudo service jenkins restart
+sudo systemctl restart jenkins
+
+# Jenkins 관리 > Security > Security Realm > Jenkins' own user database > Save
+# Jenkins 관리 > Security > Users > 사용자 생성
+
+sudo systemctl stop jenkins
+nano /var/lib/jenkins/config.xml
 ```
+```diff
+-- <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy" />
+<authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+  <denyAnonymousReadAccess>true</denyAnonymousReadAccess>
+</authorizationStrategy>
+```
+
 
 ### java.nio.charset.UnmappableCharacterException
 ```sh
@@ -170,7 +182,7 @@ sudo reboot
 * [도커에서 서비스 실행](https://stackoverflow.com/questions/25135897/how-to-automatically-start-a-service-when-running-a-docker-container)
 ```sh
 # 서비스 활성화 유무
-sudo systemctl list-units
+sudo systemctl list-units --type service --all
 sudo systemctl list-unit-files
 
 cd /etc/systemd/system
