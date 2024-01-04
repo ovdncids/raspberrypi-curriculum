@@ -110,6 +110,7 @@ BUILD_ID=leaveNpm npm run start 1> ../log.out 2> ../err.out &
 ```
 
 ### Jenkins - bash
+* [NVM](https://github.com/ovdncids/raspberrypi-curriculum/tree/master?tab=readme-ov-file#nvm)
 * `Jenkins - Execute shell`에서 또한 `source` 명령을 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
 ```sh
 #!/usr/bin/env bash
