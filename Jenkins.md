@@ -145,6 +145,7 @@ nvm
 * `Jenkins - Execute shell`에서 `source` 명령을 사용할 수 없으므로 `#!/usr/bin/env bash`를 넣어야 한다.
 ```sh
 #!/usr/bin/env bash
+
 source ~/.bashrc
 nvm use 20.8.1
 ```
