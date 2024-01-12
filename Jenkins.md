@@ -244,6 +244,7 @@ source ~/.zshrc
 ## export PATH="/usr/local/bin:$PATH"
 docker --help
 ```
+* Mac에서 Jenkins는 `현재 사용자 계정`으로 설치된다.
 
 ## 백그라운드 작업
 ```sh
