@@ -230,6 +230,21 @@ sudo systemctl is-active next-study-will-delete
 # 하지만 도커는 리부팅 계념이 없으므로 `/root/.bashrc`에 `systemctl start next-study-will-delete` 추가 해야한다.
 ```
 
+## Mac Jenkins Docker
+* https://www.jenkins.io/doc/book/installing/macos
+```sh
+brew install jenkins
+brew services start jenkins
+
+# Execute shell
+#!/usr/bin/env zsh
+
+source ~/.zshrc
+## .zshrc 파일에 `which docker` $PATH가 추가 되어 있어야 한다.
+## export PATH="/usr/local/bin:$PATH"
+docker --help
+```
+
 ## 백그라운드 작업
 ```sh
 # 백그라운드로 10000초 sleep
