@@ -246,6 +246,26 @@ docker --help
 ```
 * Mac에서 Jenkins는 `현재 사용자 계정`으로 설치된다.
 
+### Pipeline script
+```js
+node {
+    stage("sh 명령 +로 연결") {
+        sh "#!/usr/bin/env zsh\n" +
+        "source ~/.zshrc\n" +
+        "nvm ls"
+    }
+    stage("sh 명령 '''로 연결") {
+        sh '''#!/usr/bin/env zsh
+            source ~/.zshrc
+            nvm ls
+        '''
+        // sh "pwd"
+        // sh "nvm ls"
+    }
+}
+```
+* ❕ `sh '''#!/usr/bin/env zsh` 이렇게 한줄로 붙여야 `source 명령`이 정상 동작한다.
+
 ## 백그라운드 작업
 ```sh
 # 백그라운드로 10000초 sleep
