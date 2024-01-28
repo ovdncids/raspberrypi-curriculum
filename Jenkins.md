@@ -27,7 +27,7 @@ systemctl is-active jenkins
 http://아이피:8080
 ## 로딩 페이지에서 5분동안 못 넘어가는 경우
 ## jenkins 계정으로 jenkins.war 파일을 실행해서 5분안에 Unlock Jenkins 페이지까지 이동 되는지 확인
-systemctl stop jenkins
+sudo systemctl stop jenkins
 sudo su - jenkins -c "/usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080"
 
 ## 서비스의 Timeout 확인: 기본 90초
@@ -82,8 +82,8 @@ sudo su - jenkins -c "/usr/bin/java -Djava.awt.headless=true -Dfile.encoding=UTF
 nano /usr/lib/systemd/system/jenkins.service
 Environment="JAVA_OPTS=-Djava.awt.headless=true -Dfile.encoding=UTF-8"
 sudo apt install systemctl
-systemctl stop jenkins
-systemctl start jenkins
+sudo systemctl stop jenkins
+sudo systemctl start jenkins
 ## service jenkins start를 사용하면 `/usr/lib/systemd/system/jenkins.service` 설정이 적용 안될 수 있다.
 ## Jenkins > Manage Jenkins > Status Information > System Properties > file.encoding > UTF-8 적용 되었는지 확인
 ```
