@@ -4,6 +4,10 @@
 * https://pkg.jenkins.io/debian-stable
 * https://pimylifeup.com/jenkins-raspberry-pi
 ```sh
+# Java 11 버전 설치 (필수)
+sudo apt install openjdk-11-jdk
+java -version
+
 # Jenkins key 생성
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
     https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
