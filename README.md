@@ -31,7 +31,7 @@ ssh-keygen -R 아이피
 sudo nano /boot/config.txt
 
 ## HDMI 최소 해상도
-hdmi_save=1
+hdmi_safe=1
 
 ## HDMI 모니터 안켜질 경우 (https://rasino.tistory.com/287)
 hdmi_group=2
