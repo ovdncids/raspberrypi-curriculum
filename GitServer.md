@@ -60,3 +60,25 @@ ssh-agent zsh && ssh-add ~/.ssh/git_rsa
 exit
 git pull
 ```
+
+# Github CLI
+* [설치 방법](https://velog.io/@mythos/Raspberry-Pi-github-CLI-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0)
+```sh
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update
+sudo apt install gh
+```
+
+## 로그인
+```sh
+gh auth login
+
+# What account do you want to log into? GitHub.com
+# What is your preferred protocol for Git operations on this host? HTTPS
+# Authenticate Git with your GitHub credentials? Yes
+# How would you like to authenticate GitHub CLI? Paste an authentication token
+https://github.com/settings/tokens < 토큰 생성 후 붙여 넣기
+
+git clone https://...
+```
