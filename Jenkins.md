@@ -19,6 +19,11 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 
 # Jenkins 설치
 sudo apt update
+## Ubuntu 20.04
+## The repository 'https://pkg.jenkins.io/debian-stable binary/ Release' does not have a Release file.
+## https://stackoverflow.com/questions/69495517/unable-to-install-jenkins-on-ubuntu-20-04
+## sudo apt upgrade
+## sudo apt update
 sudo apt install fontconfig (선택 사항)
 sudo apt install jenkins
 ## invoke-rc.d: initscript jenkins, action "start" failed. (Jenkins 서버 실행 오류 나올 수 있음)
