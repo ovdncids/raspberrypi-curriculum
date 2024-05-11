@@ -19,8 +19,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 
 # Jenkins 설치
 sudo apt update
-## Ubuntu 20.04
-## The repository 'https://pkg.jenkins.io/debian-stable binary/ Release' does not have a Release file.
+## (Ubuntu 20.04) The repository 'https://pkg.jenkins.io/debian-stable binary/ Release' does not have a Release file.
 ## https://stackoverflow.com/questions/69495517/unable-to-install-jenkins-on-ubuntu-20-04
 ## sudo apt upgrade
 ## sudo apt update
