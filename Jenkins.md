@@ -108,8 +108,9 @@ systemctl restart jenkins.service
 # 3000 port 확인
 netstat -tnlp | grep 3000 || echo "3000 port is not running."
 # 3000 port 종료
-fuser -k 3000/tcp || echo "Can not turn off 3000 port"
+## fuser -k 3000/tcp || echo "Can not turn off 3000 port"
 ## fuser: command not found (sudo apt install psmisc)
+pkill -u jenkins -f "next-router-worker"
 
 # 소스 복사, 빌드, 실행
 rm -fr /var/lib/jenkins/build/next-study-will-delete/source
