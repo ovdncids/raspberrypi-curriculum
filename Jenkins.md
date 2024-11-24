@@ -131,6 +131,7 @@ BUILD_ID=leaveNohup nohup npm run start > ../log.out 2>&1 &
 # BUILD_ID=leaveNpm 뒤에 명령어가 성공되면 이전에 에러가 발생해도 빌드 성공으로 인식 한다.
 npm run build || exit
 BUILD_ID=leaveNpm npm run start 1> ../log.out 2> ../err.out &
+## BUILD_ID=leaveNpm npm run start -- -p 13000 1> ../log.out 2> ../err.out &
 ```
 
 ### Jenkins - bash
